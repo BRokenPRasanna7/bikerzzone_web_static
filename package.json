@@ -1,0 +1,15 @@
+{
+  "name": "bikerz_zone",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/fssa-batch3/prasanna.mohanram__web_project)"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

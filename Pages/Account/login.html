@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../../Assets/CSS/login.css">
+  <title>
+    Login page
+  </title>
+  <link rel="icon" type="image" href="../../Assets/Images/BIKERZ ZONE.png">
+</head>
+
+<body>
+  <div class="login">
+    <h2>Login</h2>
+    <!-- <form> -->
+    <div class="inputs">
+      <input id="email" type="text" name="email" required="true">
+      <label for="email">Email</label>
+    </div>
+    <div class="inputs">
+      <input id="password" type="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="Password"
+        required="true">
+      <label for="password">Password</label>
+    </div><br>
+    <div class="remember">
+      <input id="remember" type="checkbox" name="checkbox">
+      <label for="remember"> Remember me</label>
+    </div>
+    <button id="btn" onclick="login()"> Log In </button>
+    <a id="new-acc" href="../../Pages/Account/signup.html"> Create a New Account</a>
+    <!-- </form> -->
+
+
+  </div>
+</body>
+<script>
+
+  function login() {
+
+    let name = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let record = JSON.parse(localStorage.getItem("user_signup_list"));
+    let profile = {
+      "email": name,
+      "password": password
+    }
+    let res;
+
+    record.find(element => {
+      if (element["email"] == name && element["password"] == password) {
+        localStorage.setItem("profile_details", JSON.stringify(profile))
+        return res = 1
+      }
+
+      else {
+        return res = 0;
+      }
+    }
+    )
+
+
+    if (res == 1) {
+      alert("Login Success👍")
+      window.location.href = "profile.html"
+    }
+
+    else {
+      alert("Username or Password is Wrong❌")
+    }
+
+  }
+
+</script>
+
+</html>
